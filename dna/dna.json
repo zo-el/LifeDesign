@@ -12,90 +12,56 @@
   },
   "Zomes": [
     {
-      "Name": "voting",
-      "Description": "To determine green/red paddle choice.",
-      "RibosomeType": "js",
-      "CodeFile": "voting.js",
-      "Entries": [
-        {
-          "Name": "vote",
-          "DataFormat": "json",
-          "SchemaFile": "vote.json",
-          "Sharing": "public"
-        },
-        {
-          "Name": "playerRegistration",
-          "DataFormat": "json",
-          "Sharing": "public",
-          "SchemaFile" : "playerRegistration.json"
-        },
-        {
-          "Name": "gameBucket",
-          "DataFormat": "json",
-          "Sharing": "public",
-          "SchemaFile" : "gameBucket.json"
-        },
-        {
-          "Name": "cachedGameBucket",
-          "DataFormat": "json",
-          "Sharing": "private",
-          "SchemaFile" : "gameBucket.json"
-        },
-        {
-          "Name": "teamLink",
-          "DataFormat": "links",
-          "Sharing": "public"
-        },
-        {
-          "Name": "voteLink",
-          "DataFormat": "links",
-          "Sharing": "public"
-        }
-      ],
-      "Functions": [
-        {
-          "Name": "register",
-          "CallingType": "json",
-          "Exposure": "public"
-        },{
-          "Name": "unRegister",
-          "CallingType": "json",
-          "Exposure": "public"
-        },
-        {
-          "Name": "vote",
-          "CallingType": "json",
-          "Exposure": "public"
-        },
-        {
-          "Name": "getState",
-          "CallingType": "json",
-          "Exposure": "public"
-        },
-        {
-          "Name": "getTeam",
-          "CallingType": "json",
-          "Exposure": "public"
-        },
-        {
-          "Name": "getRegistration",
-          "CallingType": "json",
-          "Exposure": "public"
-        },
-        {
-          "Name": "getPlayers",
-          "CallingType": "json",
-          "Exposure": "public"
-        },
-        {
-          "Name": "getVotesAfterVote",
-          "CallingType": "json",
-          "Exposure": "public"
-        }
-      ],
-      "Code": "'use strict'"
-      },
-      {
+        "Name": "profiles",
+        "Description": "Profiles controller",
+        "RibosomeType": "js",
+        "CodeFile": "profiles.js",
+        "Entries": [
+            {
+                "Name": "registration_link",
+                "DataFormat": "links",
+                "Sharing":"public"
+            },
+            {
+                "Name": "agent_profile_link",
+                "DataFormat": "links",
+                "Sharing":"public"
+            },
+            {
+                "Name": "profile",
+                "DataFormat": "json",
+                "SchemaFile": "profile.json",
+                "Sharing": "public"
+            }
+        ],
+        "Functions": [
+            {
+                "Name": "register",
+                "CallingType": "json",
+                "Exposure": "public"
+            },
+            {
+                "Name": "isRegistered",
+                "CallingType": "json",
+                "Exposure": "public"
+            },
+            {
+                "Name": "getMyAgentHash",
+                "CallingType": "string",
+                "Exposure": "public"
+            },
+            {
+                "Name": "getProfile",
+                "CallingType": "json",
+                "Exposure": "public"
+            },
+            {
+                "Name": "updateProfile",
+                "CallingType": "json",
+                "Exposure": "public"
+            }
+        ]
+    },  {
         "Name": "anchors",
         "Description": "anchors mixin",
         "RibosomeType": "js",
