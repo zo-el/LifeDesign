@@ -61,7 +61,62 @@
                 "Exposure": "public"
             }
         ]
-    },  {
+    },
+    {
+        "Name": "community",
+        "Description": "community controller",
+        "RibosomeType": "js",
+        "CodeFile": "community.js",
+        "Entries": [
+            {
+                "Name": "community",
+                "DataFormat": "json",
+                "SchemaFile": "community.json",
+                "Sharing": "public"
+            },
+            {
+                "Name": "community_links",
+                "DataFormat": "links"
+            },
+            {
+                "Name": "admin_link",
+                "DataFormat": "links"
+            }
+        ],
+        "Functions": [
+            {
+                "Name": "getPubliccommunity",
+                "CallingType": "json",
+                "Exposure": "public"
+            },
+            {
+                "Name": "newcommunity",
+                "CallingType": "json",
+                "Exposure": "public"
+            },
+            {
+                "Name": "getcommunityByName",
+                "CallingType": "json",
+                "Exposure": "private"
+            },
+            {
+                "Name": "getMyPrivatecommunity",
+                "CallingType": "json",
+                "Exposure": "public"
+            },
+            {
+                "Name": "setcommunityAdmin",
+                "CallingType": "json",
+                "Exposure": "private"
+            },
+            {
+                "Name": "getcommunityAdmin",
+                "CallingType": "json",
+                "Exposure": "public"
+            }
+        ]
+    },
+      {
         "Name": "anchors",
         "Description": "anchors mixin",
         "RibosomeType": "js",
