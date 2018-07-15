@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "RequiresVersion": 25,
+  "UUID": "689f53c0-6290-4244-a983-21506cf0596a",
+  "Name": "Pong",
+  "Properties": {
+    "description": "To allow for orangic game playing and community collabortion when playing the game of pong."
+  },
+  "PropertiesSchemaFile": "properties_schema.json",
+  "DHTConfig": {
+    "HashType": "sha2-256"
+  },
+  "Zomes": [
+    {
+      "Name": "voting",
+      "Description": "To determine green/red paddle choice.",
+      "RibosomeType": "js",
+      "CodeFile": "voting.js",
+      "Entries": [
+        {
+          "Name": "vote",
+          "DataFormat": "json",
+          "SchemaFile": "vote.json",
+          "Sharing": "public"
+        },
+        {
+          "Name": "playerRegistration",
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile" : "playerRegistration.json"
+        },
+        {
+          "Name": "gameBucket",
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile" : "gameBucket.json"
+        },
+        {
+          "Name": "cachedGameBucket",
+          "DataFormat": "json",
+          "Sharing": "private",
+          "SchemaFile" : "gameBucket.json"
+        },
+        {
+          "Name": "teamLink",
+          "DataFormat": "links",
+          "Sharing": "public"
+        },
+        {
+          "Name": "voteLink",
+          "DataFormat": "links",
+          "Sharing": "public"
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "register",
+          "CallingType": "json",
+          "Exposure": "public"
+        },{
+          "Name": "unRegister",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "vote",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getState",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getTeam",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getRegistration",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getPlayers",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getVotesAfterVote",
+          "CallingType": "json",
+          "Exposure": "public"
+        }
+      ],
+      "Code": "'use strict'"
+      },
+      {
+        "Name": "anchors",
+        "Description": "anchors mixin",
+        "RibosomeType": "js",
+        "CodeFile": "anchors.js",
+        "Config": {
+          "ErrorHandling": "throwErrors"
+        },
+        "Entries": [
+          {
+            "Name": "anchor",
+            "DataFormat": "json",
+            "SchemaFile": "anchor.json",
+            "Sharing": "public"
+          },
+          {
+            "Name": "anchor_link",
+            "DataFormat": "links"
+          }
+        ],
+        "Functions": [
+          {
+            "Name": "anchor",
+            "CallingType": "json"
+          },
+          {
+            "Name": "exists",
+            "CallingType": "json"
+          },
+          {
+            "Name": "anchors",
+            "CallingType": "string"
+          }
+        ]
+    }
+  ]
+}
